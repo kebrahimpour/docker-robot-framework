@@ -6,11 +6,14 @@ services:
         shm_size: "50gb"
         environment:
             USERNAME: robot
+        build:
+            context: .
+            dockerfile: Dockerfile    
         volumes: [
-           "$PWD/suites:/opt/robotframework/tests",
-           "$PWD/scripts:/scripts:/opt/robotframework/scripts",
-           "$PWD:/opt/robotframework/work",
-           "$PWD/reports://opt/robotframework/reports",
+           "./suites:/opt/robotframework/tests",
+           "./scripts:/scripts:/opt/robotframework/scripts",
+           ".:/opt/robotframework/work",
+           "./reports:/opt/robotframework/reports",
            "/var/run/docker.sock:/var/run/docker.sock"
         ]
 
