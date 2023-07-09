@@ -1,7 +1,7 @@
 FROM fedora:39
 
-MAINTAINER Paul Podgorsek <ppodgorsek@users.noreply.github.com>
-LABEL description Robot Framework in Docker.
+LABEL name="description Robot Framework in Docker based on ppodgorsek's Work"
+
 
 # Set the reports directory environment variable
 ENV ROBOT_REPORTS_DIR /opt/robotframework/reports
@@ -9,8 +9,10 @@ ENV ROBOT_REPORTS_DIR /opt/robotframework/reports
 # Set the tests directory environment variable
 ENV ROBOT_TESTS_DIR /opt/robotframework/tests
 
+ENV ROBOT_SCRIPT_DIR /opt/robotframework/scripts
+
 # Set the working directory environment variable
-ENV ROBOT_WORK_DIR /opt/robotframework/temp
+ENV ROBOT_WORK_DIR /opt/robotframework/work
 
 # Setup X Window Virtual Framebuffer
 ENV SCREEN_COLOUR_DEPTH 24

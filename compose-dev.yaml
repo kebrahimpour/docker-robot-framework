@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+    robot-dev:
+        network_mode: host
+        image: robot-dev
+        shm_size: "50gb"
+        environment:
+            USERNAME: robot
+        volumes: [
+           "$PWD/suites:/opt/robotframework/tests",
+           "$PWD/scripts:/scripts:/opt/robotframework/scripts",
+           "$PWD:/opt/robotframework/work",
+           "$PWD/reports://opt/robotframework/reports",
+           "/var/run/docker.sock:/var/run/docker.sock"
+        ]
+
+
+
+
